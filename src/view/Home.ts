@@ -63,7 +63,10 @@ export default class Home implements View {
                 }
                 if (info2.balance > 0) {
                     this.mintForm.append(el("p", `You are eligible for the whitelisted mints, starting at 1PM UTC.\n(Your max number of mints: ${info2.balance})`));
+                } else if (await TheKoreans1945MinterContract.isListedUser(address)) {
+                    this.mintForm.append(el("p", `You are eligible for the whitelisted mints, starting at 1PM UTC.\n(Your max number of mints: 1)`));
                 }
+
                 if (info1.balance === 0 && info2.balance === 0) {
                     this.mintForm.append(el("p", "Oops! Sorry, you are not eligible for the mint."));
                 }
@@ -83,6 +86,11 @@ export default class Home implements View {
                                 el("p", "It isn’t time to mint yet. Please hold!"),
                                 el("p", `You are eligible for the whitelisted mints, starting at 1PM UTC.\n(Your max number of mints: ${info2.balance})`),
                             );
+                        } else if (await TheKoreans1945MinterContract.isListedUser(address)) {
+                            this.mintForm.empty().append(
+                                el("p", "It isn’t time to mint yet. Please hold!"),
+                                el("p", `You are eligible for the whitelisted mints, starting at 1PM UTC.\n(Your max number of mints: 1)`),
+                            );
                         } else {
                             this.mintForm.empty().append(el("p", "Oops! Sorry, you are not eligible for the mint."));
                         }
@@ -93,6 +101,11 @@ export default class Home implements View {
                         this.mintForm.empty().append(
                             el("p", "It isn’t time to mint yet. Please hold!"),
                             el("p", `You are eligible for the whitelisted mints, starting at 1PM UTC.\n(Your max number of mints: ${info2.balance})`),
+                        );
+                    } else if (await TheKoreans1945MinterContract.isListedUser(address)) {
+                        this.mintForm.empty().append(
+                            el("p", "It isn’t time to mint yet. Please hold!"),
+                            el("p", `You are eligible for the whitelisted mints, starting at 1PM UTC.\n(Your max number of mints: 1)`),
                         );
                     } else {
                         this.mintForm.empty().append(el("p", "Oops! Sorry, you are not eligible for the mint."));
