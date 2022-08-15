@@ -225,6 +225,7 @@ body {
   color: #d6ff46;
 }
 .home-view > main > section > .mint-form > .info-container {
+  margin-top: 20px;
   display: flex;
   width: 100%;
   justify-content: space-between;

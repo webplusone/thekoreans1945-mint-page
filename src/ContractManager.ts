@@ -84,6 +84,23 @@ class ContractManager {
         results.sort((a, b) => b.balance - a.balance);
         return results[0];
     }
+
+    public async loadWLBalances(address: string): Promise<{ addr: string, balance: number }[]> {
+        const results: { addr: string, balance: number }[] = [];
+        const promises: Promise<void>[] = [];
+        for (const contract of this.wlContracts) {
+            const promise = async () => {
+                results.push({
+                    addr: contract.address,
+                    balance: (await contract.balanceOf(address)).toNumber(),
+                });
+            };
+            promises.push(promise());
+        }
+        await Promise.all(promises);
+        results.sort((a, b) => b.balance - a.balance);
+        return results;
+    }
 }
 
 export default new ContractManager();

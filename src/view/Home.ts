@@ -117,8 +117,28 @@ export default class Home implements View {
             else if (timestamp < this.publicMintTime) {
                 const info = await ContractManager.loadWLBalance(address);
                 if (info.balance > 0) {
-                    const minted = (await TheKoreans1945MinterContract.mintedAmount(address, info.addr)).toNumber();
-                    this.displayMintForm(info.addr, info.balance - minted);
+                    const totalSupply = await TheKoreans1945Contract.totalSupply();
+                    const infos = await ContractManager.loadWLBalances(address);
+                    this.mintForm.empty();
+                    for (const info of infos) {
+                        if (info.balance > 0) {
+                            this.mintForm.append(
+                                el(".info-container",
+                                    el(".info",
+                                        el("h6", "Minted"),
+                                        el("p", totalSupply.toString()),
+                                    ),
+                                    el(".info",
+                                        el("h6", "Max of"),
+                                        el("p", String(info.balance)),
+                                    ),
+                                ),
+                                el("a.mint", "Mint!", {
+                                    click: () => TheKoreans1945MinterContract.mint(info.addr),
+                                }),
+                            );
+                        }
+                    }
                 } else if (await TheKoreans1945MinterContract.isListedUser(address)) {
                     this.displayMintForm(constants.AddressZero, 1);
                 } else {
