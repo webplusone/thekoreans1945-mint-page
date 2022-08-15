@@ -59,7 +59,7 @@ export default class Home implements View {
                 );
 
                 if (info1.balance > 0) {
-                    this.mintForm.append(el("p", `You are eligible for the pre-mint, starting at 12PM UTC.\n(Your max number of mints: ${info1.balance})`));
+                    this.mintForm.append(el("p", `You are eligible for the pre-mint, starting at 12PM UTC.\n(Your max number of mints: 1)`));
                 }
                 if (info2.balance > 0) {
                     this.mintForm.append(el("p", `You are eligible for the whitelisted mints, starting at 1PM UTC.\n(Your max number of mints: ${info2.balance})`));
