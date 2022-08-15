@@ -134,7 +134,13 @@ export default class Home implements View {
                                     ),
                                 ),
                                 el("a.mint", "Mint!", {
-                                    click: () => TheKoreans1945MinterContract.mint(info.addr),
+                                    click: async () => {
+                                        try {
+                                        await TheKoreans1945MinterContract.mint(info.addr);
+                                        }catch(error) {
+                                            alert("Minting has been completed for the quantity corresponding to the collection.");
+                                        }
+                                    },
                                 }),
                             );
                         }
