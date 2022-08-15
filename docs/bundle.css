@@ -1,0 +1,297 @@
+/*
+https://github.com/Hanul/sky-css-base
+v0.0.1 | 20210109
+Author: Sim Young Jae
+License: MIT
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*,
+*:focus {
+  outline: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  cursor: pointer;
+}
+button,
+input {
+  border: none;
+}
+[hidden] {
+  display: none !important;
+}
+[contenteditable] {
+  -webkit-tap-highlight-color: transparent;
+}
+.float-wrapper:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+body {
+  font-weight: bold;
+  background: #6b8493;
+  color: #fff;
+}
+.home-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.4em;
+}
+@media only screen and (max-width: 719px) {
+  .home-view {
+    font-size: 16px;
+  }
+}
+.home-view > main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  gap: 100px;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > main {
+    display: block;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .home-view > main > img {
+    display: none;
+  }
+}
+.home-view > main > section {
+  width: 720px;
+  padding: 0 20px;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > main > section {
+    width: 100%;
+  }
+  .home-view > main > section > img:first-of-type {
+    width: 100%;
+  }
+}
+.home-view > main > section > .mint-form {
+  padding: 50px 0;
+}
+.home-view > main > section > .mint-form > p {
+  margin-bottom: 20px;
+  color: #d6ff46;
+}
+.home-view > main > section > .mint-form > .info-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.home-view > main > section > .mint-form > .info-container > .info {
+  display: flex;
+  align-items: center;
+  font-size: 46px;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > main > section > .mint-form > .info-container > .info {
+    font-size: 20px;
+  }
+}
+.home-view > main > section > .mint-form > .info-container > .info > h6 {
+  color: #d6ff46;
+  margin-right: 16px;
+}
+.home-view > main > section > .mint-form > .info-container > .info > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 5px 20px 0;
+  line-height: 50px;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > main > section > .mint-form > .info-container > .info > p {
+    line-height: 30px;
+  }
+}
+.home-view > main > section > .mint-form > a.mint {
+  display: block;
+  margin-top: 30px;
+  font-size: 46px;
+  background-color: black;
+  color: #d6ff46;
+  padding: 15px 20px 10px;
+  line-height: 50px;
+  border-radius: 16px;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > main > section > .mint-form > a.mint {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+.home-view > main > section > .mobile-punks {
+  display: none;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > main > section > .mobile-punks {
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
+.home-view > footer {
+  height: 212px;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > footer > img {
+    width: 100%;
+  }
+}
+
